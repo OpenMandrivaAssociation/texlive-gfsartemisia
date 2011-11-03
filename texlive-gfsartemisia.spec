@@ -1,3 +1,9 @@
+# revision 19469
+# category Package
+# catalog-ctan /fonts/greek/gfs/gfsartemisia
+# catalog-date 2008-08-19 21:00:04 +0200
+# catalog-license other-free
+# catalog-version 1.0
 Name:		texlive-gfsartemisia
 Version:	1.0
 Release:	1
@@ -161,6 +167,7 @@ LaTeX support is provided, using the OT1, T1 and LGR encodings.
 %doc %{_texmfdistdir}/doc/fonts/gfsartemisia/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/gfsartemisia/gfsartemisia.pdf
 %doc %{_texmfdistdir}/doc/fonts/gfsartemisia/gfsartemisia.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -171,3 +178,5 @@ LaTeX support is provided, using the OT1, T1 and LGR encodings.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
