@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 GFS Artemisia is a relatively modern font, designed as a
@@ -27,20 +25,12 @@ treated. The present version has been provided by the Greek
 Font Society. The font supports the Greek and Latin alphabets.
 LaTeX support is provided, using the OT1, T1 and LGR encodings.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -168,7 +158,6 @@ LaTeX support is provided, using the OT1, T1 and LGR encodings.
 %doc %{_texmfdistdir}/doc/fonts/gfsartemisia/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/gfsartemisia/gfsartemisia.pdf
 %doc %{_texmfdistdir}/doc/fonts/gfsartemisia/gfsartemisia.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -179,5 +168,3 @@ LaTeX support is provided, using the OT1, T1 and LGR encodings.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
