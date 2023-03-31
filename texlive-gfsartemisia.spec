@@ -1,6 +1,6 @@
 Name:		texlive-gfsartemisia
 Version:	19469
-Release:	1
+Release:	2
 Summary:	A modern Greek font design
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greek/gfs/gfsartemisia
