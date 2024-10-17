@@ -3,7 +3,7 @@ Version:	19469
 Release:	2
 Summary:	A modern Greek font design
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/greek/gfs/gfsartemisia
+URL:		https://www.ctan.org/tex-archive/fonts/greek/gfs/gfsartemisia
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gfsartemisia.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gfsartemisia.doc.r%{version}.tar.xz
